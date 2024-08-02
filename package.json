@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy-mah": "tsc &&  vite build --base=/apps/vite-static/ && rsync -avz --delete dist/ mah@mah.priv.at:/var/www/static.mah.priv.at/apps/vite-static/"
   },
   "dependencies": {
     "react": "^18.2.0",
