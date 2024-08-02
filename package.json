@@ -6,15 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "deploy-mah": "tsc &&  vite build --base=/apps/vite-static-pwa/ && rsync -avz --delete dist/ mah@mah.priv.at:/var/www/static.mah.priv.at/apps/vite-static-pwa/",
+    "deploy-mah": "tsc &&  vite build --base=/apps/react-leaflet-pwa/ && rsync -avz --delete dist/ mah@mah.priv.at:/var/www/static.mah.priv.at/apps/react-leaflet-pwa/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
