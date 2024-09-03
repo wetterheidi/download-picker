@@ -1,24 +1,33 @@
-import { useState } from 'react'
-import PWABadge from './PWABadge.tsx'
 import './App.css'
 import Map from './Map';
+import DateTime from './DateTime';
+import { useState } from 'react';
+import { format } from 'date-fns';
+import { LatLng } from 'leaflet';
 
+
+
+// DateContext
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [position, setPosition] = useState<LatLng>(new LatLng(46, 15));
 
   return (
     <>
-      {/* <h1>react-leaflet-pwa</h1> */}
-
+      <h1>heidiware picker</h1>
+      <div>
+        Selected Date & Time: {selectedDate ? format(selectedDate, 'MMMM d, yyyy h:mm aa') : 'None'}
+      </div>
+      <div>
+        Selected Position: {JSON.stringify(position)}
+      </div>
       <div className="Map">
-        <Map />
+        <Map position={position} setPosition={setPosition} />
       </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+
+      <div className="timepicker">
+        <DateTime selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
       </div>
-      <PWABadge />
     </>
   )
 }
