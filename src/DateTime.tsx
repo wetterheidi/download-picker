@@ -5,8 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 const maxDays = 14;
 
 interface DateTimeSliderProps {
-    selectedDate: Date | null; 
-    setSelectedDate: (date: Date | null) => void; 
+    selectedDate: Date | null;
+    setSelectedDate: (date: Date | null) => void;
 }
 
 const DateTimeSlider: React.FC<DateTimeSliderProps> = ({ selectedDate, setSelectedDate }) => {
@@ -16,6 +16,7 @@ const DateTimeSlider: React.FC<DateTimeSliderProps> = ({ selectedDate, setSelect
     return (
         <div>
             <DatePicker
+                className="datepicker"
                 selected={selectedDate}
                 onChange={(date: Date | null) => {
                     setSelectedDate(date); // Set the date directly
@@ -24,7 +25,7 @@ const DateTimeSlider: React.FC<DateTimeSliderProps> = ({ selectedDate, setSelect
                 showTimeSelect
                 timeFormat="HH:mm"
                 timeIntervals={60}
-                dateFormat="MMMM d, yyyy h:mm aa"
+                dateFormat="yyyy-MM-dd HH:mm"
                 minDate={startTime}
                 maxDate={endTime}
             />

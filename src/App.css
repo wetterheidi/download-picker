@@ -11,9 +11,11 @@ t-touch-zoom .logo {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@ t-touch-zoom .logo {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,23 @@ t-touch-zoom .logo {
 
 .read-the-docs {
   color: #888;
+}
+
+.timepicker {
+  /* Open timepicker in foreground*/
+  position: relative;
+  z-index: 1000;
+}
+
+.datepicker {
+  background-color: #888;
+  text-align: center;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+ha {
+  text-align: center;
 }
